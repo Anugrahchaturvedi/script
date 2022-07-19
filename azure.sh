@@ -59,7 +59,7 @@ chmod a+x helper.sh
 
 
 echo "===== ssh into the VM ====="
-scp -i devtron.pem -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no TestScript.sh $rmtuname@$public_IP:/tmp/helper.sh
+scp -i devtron.pem -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no helper.sh $rmtuname@$public_IP:/tmp/helper.sh
 sleep 5
 ssh -i devtron.pem -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $rmtuname@$public_IP 'cd /tmp; sh helper.sh;'
 
