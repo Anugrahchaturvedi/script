@@ -31,7 +31,6 @@ az network nsg rule create --resource-group microk8s-dev --nsg-name $vm_name'NSG
 echo "                        "
 
 
-echo "============= Getting Public IP of VM ==============="
 public_IP=$(az vm show -d -g microk8s-dev --name $vm_name --query publicIps -o tsv)
 echo "                        "
 
@@ -62,9 +61,12 @@ echo "===== ssh into the VM ====="
 scp -i devtron.pem -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no helper.sh $rmtuname@$public_IP:/tmp/helper.sh
 sleep 5
 ssh -i devtron.pem -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $rmtuname@$public_IP 'cd /tmp; sh helper.sh;'
-
-
-
+echo "                        "
+echo "                        "
 echo "Your VM public IP is : $public_IP"
+echo "                        "
+echo "                        "
+echo "Command to ssh into the VM : ssh -i devtron.pem $rmtuname@$public_IP"
+echo "                        "
+echo "                        "
 echo "Installation Complete"
-
