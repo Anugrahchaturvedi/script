@@ -5,5 +5,5 @@
 
 
 ```bash
-sh azure.sh <service principal ID> <service principal password>
+sh azure.sh <service principal username> <service principal password>
 ```
