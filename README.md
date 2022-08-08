@@ -7,3 +7,4 @@
 ```bash
 sh azure.sh <service principal username> <service principal password>
 ```
+###### NOTE: By default script uses ``devtron.pem`` private key to create VM, if you want some other key to use kindly make neccessary changes in the Script.
